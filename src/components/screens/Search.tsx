@@ -1,10 +1,22 @@
-import {View, Text} from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
+import {View, Text, ScrollView} from 'react-native';
 import React from 'react';
+import SearchBox from '../screenComponents/SearchBox';
+import SearchContents from '../screenComponents/SearchContents';
 
 const Search = () => {
   return (
-    <View>
-      <Text>Search</Text>
+    <View
+      style={{
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'white',
+        position: 'relative',
+      }}>
+      <ScrollView>
+        <SearchBox />
+        <SearchContents />
+      </ScrollView>
     </View>
   );
 };
