@@ -4,6 +4,7 @@ import React from 'react';
 import SearchBox from '../screenComponents/SearchBox';
 import SearchContents from '../screenComponents/SearchContents';
 
+//test
 const Search = () => {
   return (
     <View
