@@ -89,6 +89,35 @@ const SearchContents = () => {
                 </TouchableOpacity>
               </View>
             ) : null}
+            {data.id === 2 ? (
+              <View
+                style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <TouchableOpacity style={{paddingRight: 2}}>
+                  <Image
+                    source={data.images[2]}
+                    style={{width: 260, height: 300}}
+                  />
+                </TouchableOpacity>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    flexWrap: 'wrap',
+                    width: 130,
+                    justifyContent: 'space-between',
+                  }}>
+                  {data.images.slice(0, 2).map((imageData, imgIndex) => {
+                    return (
+                      <TouchableOpacity style={{paddingBottom: 2}}>
+                        <Image
+                          source={imageData}
+                          style={{width: 129, height: 150}}
+                        />
+                      </TouchableOpacity>
+                    );
+                  })}
+                </View>
+              </View>
+            ) : null}
           </>
         );
       })}
