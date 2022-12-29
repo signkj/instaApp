@@ -14,7 +14,7 @@ const Search = () => {
         backgroundColor: 'white',
         position: 'relative',
       }}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <SearchBox />
         <SearchContents />
       </ScrollView>

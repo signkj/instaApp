@@ -38,30 +38,24 @@ const SearchContents = () => {
     <View>
       {searchData.map((data, index) => {
         return (
-          <>
+          <View key={index}>
             {data.id === 0 ? (
               <View
                 style={{
                   flexDirection: 'row',
+                  flexWrap: 'wrap',
                   justifyContent: 'space-between',
+                  width: '100%',
                 }}>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    flexWrap: 'wrap',
-                    width: 261,
-                    justifyContent: 'space-between',
-                  }}>
-                  {data.images.map((imageData, imgIndex) => {
-                    return (
-                      <TouchableOpacity>
-                        <Image
-                          source={imageData}
-                          style={{width: 129, height: 150}}></Image>
-                      </TouchableOpacity>
-                    );
-                  })}
-                </View>
+                {data.images.map((imageData, imgIndex) => {
+                  return (
+                    <TouchableOpacity>
+                      <Image
+                        source={imageData}
+                        style={{width: 129, height: 150}}></Image>
+                    </TouchableOpacity>
+                  );
+                })}
               </View>
             ) : null}
             {data.id === 1 ? (
@@ -70,21 +64,28 @@ const SearchContents = () => {
                   flexDirection: 'row',
                   justifyContent: 'space-between',
                 }}>
-                <View>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    flexWrap: 'wrap',
+                    width: '66.5%',
+                    justifyContent: 'space-between',
+                  }}>
                   {data.images.slice(0, 4).map((imageData, imgIndex) => {
                     return (
                       <TouchableOpacity>
                         <Image
                           source={imageData}
-                          style={{width: 129, height: 150}}></Image>
+                          style={{width: '100%', height: 150}}
+                        />
                       </TouchableOpacity>
                     );
                   })}
                 </View>
-                <TouchableOpacity style={{marginLeft: 2}}>
+                <TouchableOpacity style={{marginLeft: 2, width: '33%'}}>
                   <Image
                     source={data.images[5]}
-                    style={{width: 129, height: 300}}
+                    style={{width: '100%', height: 300}}
                   />
                 </TouchableOpacity>
               </View>
@@ -92,25 +93,26 @@ const SearchContents = () => {
             {data.id === 2 ? (
               <View
                 style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                <TouchableOpacity style={{paddingRight: 2}}>
+                <TouchableOpacity style={{paddingRight: 2, width: '66.5%'}}>
                   <Image
                     source={data.images[2]}
-                    style={{width: 260, height: 300}}
+                    style={{width: '100%', height: 300}}
                   />
                 </TouchableOpacity>
                 <View
                   style={{
                     flexDirection: 'row',
                     flexWrap: 'wrap',
-                    width: 130,
+                    width: '33%',
                     justifyContent: 'space-between',
                   }}>
                   {data.images.slice(0, 2).map((imageData, imgIndex) => {
                     return (
-                      <TouchableOpacity style={{paddingBottom: 2}}>
+                      <TouchableOpacity
+                        style={{paddingBottom: 2, width: '100%'}}>
                         <Image
                           source={imageData}
-                          style={{width: 129, height: 150}}
+                          style={{width: '100%', height: 150}}
                         />
                       </TouchableOpacity>
                     );
@@ -118,7 +120,7 @@ const SearchContents = () => {
                 </View>
               </View>
             ) : null}
-          </>
+          </View>
         );
       })}
     </View>
