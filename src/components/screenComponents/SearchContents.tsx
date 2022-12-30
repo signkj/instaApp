@@ -1,7 +1,7 @@
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import React from 'react';
 
-const SearchContents = () => {
+const SearchContents = props => {
   const searchData = [
     {
       id: 0,
@@ -49,7 +49,9 @@ const SearchContents = () => {
                 }}>
                 {data.images.map((imageData, imgIndex) => {
                   return (
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                      onPressIn={() => props.data(imageData)}
+                      onPressOut={() => props.data(null)}>
                       <Image
                         source={imageData}
                         style={{width: 129, height: 150}}></Image>

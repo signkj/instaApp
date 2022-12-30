@@ -1,13 +1,17 @@
 /* eslint-disable react-native/no-inline-styles */
 import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import SearchBox from '../screenComponents/SearchBox';
 import SearchContents from '../screenComponents/SearchContents';
-
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 //test
 const Search = () => {
+  const [image, setImage] = useState(null);
+
+  const getData = (data: string) => {
+    setImage(data);
+  };
   return (
     <View
       style={{
@@ -18,7 +22,7 @@ const Search = () => {
       }}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <SearchBox />
-        <SearchContents />
+        <SearchContents data={getData} />
         <TouchableOpacity
           style={{margin: 25, justifyContent: 'center', alignItems: 'center'}}>
           <AntDesign name="pluscircleo" style={{fontSize: 40, opacity: 0.5}} />
