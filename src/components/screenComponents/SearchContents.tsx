@@ -75,7 +75,11 @@ const SearchContents = props => {
                   }}>
                   {data.images.slice(0, 4).map((imageData, imgIndex) => {
                     return (
-                      <TouchableOpacity>
+                      <TouchableOpacity
+                        key={imgIndex}
+                        onPressIn={() => props.data(imageData)}
+                        onPressOut={() => props.data(null)}
+                        style={{paddingBottom: 2, width: '49.5%'}}>
                         <Image
                           source={imageData}
                           style={{width: '100%', height: 150}}
@@ -84,7 +88,10 @@ const SearchContents = props => {
                     );
                   })}
                 </View>
-                <TouchableOpacity style={{marginLeft: 2, width: '33%'}}>
+                <TouchableOpacity
+                  onPressIn={() => props.data(data.images[5])}
+                  onPressOut={() => props.data(null)}
+                  style={{marginLeft: 2, width: '33%'}}>
                   <Image
                     source={data.images[5]}
                     style={{width: '100%', height: 300}}
@@ -95,7 +102,10 @@ const SearchContents = props => {
             {data.id === 2 ? (
               <View
                 style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                <TouchableOpacity style={{paddingRight: 2, width: '66.5%'}}>
+                <TouchableOpacity
+                  onPressIn={() => props.data(data.images[2])}
+                  onPressOut={() => props.data(null)}
+                  style={{paddingRight: 2, width: '66.5%'}}>
                   <Image
                     source={data.images[2]}
                     style={{width: '100%', height: 300}}
@@ -111,6 +121,8 @@ const SearchContents = props => {
                   {data.images.slice(0, 2).map((imageData, imgIndex) => {
                     return (
                       <TouchableOpacity
+                        onPressIn={() => props.data(imageData)}
+                        onPressOut={() => props.data(null)}
                         style={{paddingBottom: 2, width: '100%'}}>
                         <Image
                           source={imageData}
