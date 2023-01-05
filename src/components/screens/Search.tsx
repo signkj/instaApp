@@ -14,7 +14,7 @@ import SearchContents from '../screenComponents/SearchContents';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionic from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
-//test
+//test!
 const Search = () => {
   const [image, setImage] = useState(null);
 
